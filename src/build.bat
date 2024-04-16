@@ -1,2 +1,2 @@
 @echo off
-gcc ./main/main.c ./base/drawing.c -o ./build/build.exe
+gcc ./main/hello.c ./allegro/include/allegro5/allegro5.h -o ./build/build.exe
