@@ -5,6 +5,8 @@
   },
   "files.associations": {
     "*.cpp": "cpp",
-    "drawing.h": "c"
+    "drawing.h": "c",
+    "mouse.h": "c",
+    "threads.h": "c"
   }
 }
