@@ -1,0 +1,13 @@
+Rand
+
+S_Left --> 4
+S_Right --> 0
+
+U_Left --> 5
+D_Left --> 3
+
+U_Right --> 7
+D_Right --> 1
+
+U --> 6
+D --> 2
