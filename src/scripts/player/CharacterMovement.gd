@@ -2,9 +2,11 @@ extends CharacterBody2D
 
 @export var speed = 150
 
-@onready var _animated_sprite = $AnimatedSprite2D
+@onready var _body_sprite = $Body
+@onready var _head_sprite = $Head
 
 var player_cloth_status = "Cloth1"
+var player_head_status = "Male_Head1"
 
 # ------------------------------------------------------------------------------
 # get_input:	copied from docs. 
@@ -18,7 +20,8 @@ func get_input():
 #
 # play_anim:	Plays the sprites current animation
 func play_anim():
-	_animated_sprite.play(_animated_sprite.animation)
+	_body_sprite.play(_body_sprite.animation)
+	_head_sprite.play(_head_sprite.animation)
 
 # ------------------------------------------------------------------------------
 # process:	built-in animation method(?)
@@ -44,10 +47,11 @@ func _process(_delta):
 	if input_dir.length() != 0:
 		a = input_dir.angle() / (PI/4)
 		a = wrapi(int(a), 0, 8)
-		current_animation = player_cloth_status + "_Walk_"
-		_animated_sprite.animation = current_animation + str(a)
+		_body_sprite.animation = player_cloth_status + "_Walk_" + str(a)
+		_head_sprite.animation = player_head_status + "_Walk_" + str(a)
 	else:
-		_animated_sprite.animation = player_cloth_status + "_Idle_" + str(a)
+		_body_sprite.animation = player_cloth_status + "_Idle_" + str(a)
+		_head_sprite.animation = player_head_status + "_Idle_" + str(a)
 	### print(a)
 
 func _physics_process(delta):
