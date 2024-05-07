@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
 @export var speed = 150
+@export var inventory = Inv
 
 @onready var _body_sprite = $Body
 @onready var _head_sprite = $Head
+# @onready var _ui = $UI
 
 var player_cloth_status = "Cloth1"
 var player_head_status = "Male_Head1"
@@ -17,7 +19,7 @@ func get_input():
 	var input_direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = input_direction * speed
 
-#
+# ------------------------------------------------------------------------------
 # play_anim:	Plays the sprites current animation
 func play_anim():
 	_body_sprite.play(_body_sprite.animation)
@@ -34,6 +36,7 @@ func _process(_delta):
 	var current_animation = "Cloth1_Idle_D"
 	var input_dir = Vector2.ZERO
 	
+	# process movement input
 	if Input.is_action_pressed("Right"):
 		input_dir.x += 1
 	if Input.is_action_pressed("Left"):
@@ -44,6 +47,7 @@ func _process(_delta):
 		input_dir.y += 1
 	input_dir = input_dir.normalized()
 	
+	## Actual movement
 	if input_dir.length() != 0:
 		a = input_dir.angle() / (PI/4)
 		a = wrapi(int(a), 0, 8)

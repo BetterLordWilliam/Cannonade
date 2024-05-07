@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Inv" load_steps=4 format=3 uid="uid://dr5uor41tbtqh"]
+
+[ext_resource type="Resource" uid="uid://b4wyxnot0tsvp" path="res://src/items/armour/green_jacket.tres" id="1_6gc7g"]
+[ext_resource type="Script" path="res://src/scripts/ui/inventory.gd" id="2_jtsxa"]
+[ext_resource type="Resource" uid="uid://b10p8ihvgxfxa" path="res://src/items/armour/sandals.tres" id="2_t7jxy"]
+
+[resource]
+script = ExtResource("2_jtsxa")
+items = Array[Resource("res://src/scripts/ui/inventory_item.gd")]([ExtResource("1_6gc7g"), null, null, null, null, null, null, null, null, null, null, null, ExtResource("2_t7jxy"), null, null, null, null, null, null, null, null, null, null, null])

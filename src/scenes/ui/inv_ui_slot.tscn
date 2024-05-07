@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://b02yckhqimawc"]
+
+[ext_resource type="Script" path="res://src/scenes/ui/inv_ui_slot.gd" id="1_hvhwh"]
+[ext_resource type="Texture2D" uid="uid://cy3qk5ro5akx" path="res://Assets/GUI/ui/GR_smallSquare.png" id="1_t8d1g"]
+
+[node name="inv_ui_slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
+script = ExtResource("1_hvhwh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.315394, 0.315394)
+texture = ExtResource("1_t8d1g")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 0.999998
+offset_top = 1.0
+offset_right = 41.0
+offset_bottom = 41.0
+scale = Vector2(0.336394, 0.33553)
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
